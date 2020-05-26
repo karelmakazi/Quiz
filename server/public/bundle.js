@@ -546,19 +546,34 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
     value: function categoryFormatting(category) {
       switch (category) {
         case 'Animals':
-          return 'orangered';
+          return {
+            colour: 'orangered',
+            image: '../../server/public/Images/3Animals.png'
+          };
 
         case 'Films':
-          return 'orange';
+          return {
+            colour: 'orange',
+            image: '../../server/public/Images/2Films.png'
+          };
 
         case 'Science':
-          return 'cornflowerblue';
+          return {
+            colour: 'cornflowerblue',
+            image: '../../server/public/Images/4Science.png'
+          };
 
         case 'History':
-          return 'Purple';
+          return {
+            colour: 'purple',
+            image: '../../server/public/Images/5History.png'
+          };
 
         default:
-          return 'black';
+          return {
+            colour: 'black',
+            image: ''
+          };
       }
     }
   }, {
@@ -566,13 +581,15 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var categorySelected = this.props.categorySelected;
       var dispatch = this.props.dispatch;
+      var categorySelected = this.props.categorySelected;
       var currentScore = this.state.score;
       var previousScore = this.state.previous;
-      var highName = this.state.highname;
-      var color = this.categoryFormatting(categorySelected);
       var scoreBody = 'Previous Score: ' + previousScore + ' > ' + highName;
+      var highName = this.state.highname;
+      var dynamicStyling = this.categoryFormatting(categorySelected);
+      var color = dynamicStyling.colour;
+      var image = dynamicStyling.image;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "scoreIndicator"
       }, scoreBody), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
