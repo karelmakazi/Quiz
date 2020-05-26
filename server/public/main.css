@@ -1,9 +1,16 @@
+@font-face {
+  font-family: 'rubber';
+  src: url(Assets/RubberNippleFactoryBlack.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
+
 body {
   margin: 0;
   display: flex;
   align-items: center;
-  font-family: 'Lalezar', cursive;
   justify-content: center;
+  
 }
 
 .homeWrapper {
@@ -12,7 +19,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: 'Lalezar', cursive;
+  font-family: 'rubber';
+  letter-spacing: 0.01em;
+  background-color: bisque;
 }
 
 .homeWrapper h1 {
