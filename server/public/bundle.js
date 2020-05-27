@@ -547,26 +547,26 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
       switch (category) {
         case 'Animals':
           return {
-            colour: 'orangered',
-            image: '../../server/public/Images/3Animals.png'
+            colour: '#C33038',
+            image: './Images/3Animals.png'
           };
 
         case 'Films':
           return {
-            colour: 'orange',
-            image: '../../server/public/Images/2Films.png'
+            colour: '#D66C2A',
+            image: './Images/2Films.png'
           };
 
         case 'Science':
           return {
-            colour: 'cornflowerblue',
-            image: '../../server/public/Images/4Science.png'
+            colour: '#73A7E3',
+            image: './Images/4Science.png'
           };
 
         case 'History':
           return {
-            colour: 'purple',
-            image: '../../server/public/Images/5History.png'
+            colour: '#702C68',
+            image: './Images/5History.png'
           };
 
         default:
@@ -590,9 +590,15 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
       var dynamicStyling = this.categoryFormatting(categorySelected);
       var color = dynamicStyling.colour;
       var image = dynamicStyling.image;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "scoreIndicator"
-      }, scoreBody), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mainContainer",
+        style: {
+          backgroundImage: "url(".concat(image, ")")
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "contentContainer shadow"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "categoryHead",
         style: {
           color: color
         }
@@ -613,7 +619,7 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this3.handleResultsSubmit(dispatch);
         }
-      }, "Proceed"));
+      }, "Proceed")));
     }
   }]);
 

@@ -111,20 +111,20 @@ class Quiz extends React.Component {
   categoryFormatting(category){
       switch (category){
         case 'Animals':
-          return { colour: 'orangered', 
-                  image: '../../server/public/Images/3Animals.png'
+          return { colour: '#C33038', 
+                  image: './Images/3Animals.png'
                   }
         case 'Films':
-                return { colour: 'orange', 
-                image: '../../server/public/Images/2Films.png'
+                return { colour: '#D66C2A', 
+                image: './Images/2Films.png'
                 }
         case 'Science':
-                return { colour: 'cornflowerblue', 
-                image: '../../server/public/Images/4Science.png'
+                return { colour: '#73A7E3', 
+                image: './Images/4Science.png'
                 }
         case 'History':
-                return { colour: 'purple', 
-                image: '../../server/public/Images/5History.png'
+                return { colour: '#702C68', 
+                image: './Images/5History.png'
                 }
         default:
               return { colour: 'black', 
@@ -146,21 +146,26 @@ class Quiz extends React.Component {
     const image = dynamicStyling.image
       
     return (
-      <div>
-        <div className='scoreIndicator'>
-          {scoreBody}
+      <div className="mainContainer" style={{backgroundImage:`url(${image})`}}>
+        <div className="contentContainer shadow">
+
+             
+              <h1 className="categoryHead" style={{color: color}}> {categorySelected}</h1>
+              <h3> Your Score: {currentScore}</h3>
+              { this.state.results.map((result, index) => {
+                  return (<div key={index}>
+                    <Question question={result.question} correctAnswer={result.correct_answer} 
+                    color={color} id={index} parentHandler={this.questionResponseHandler}/>
+                    </div> )
+                })
+              }
+              <Link to='/'>Home</Link>
+              <Link to='/Score' onClick={() => this.handleResultsSubmit(dispatch)} >Proceed</Link>
+
         </div>
-        <h2 style={{color: color}}> {categorySelected}</h2>
-        <h3> Your Score: {currentScore}</h3>
-        { this.state.results.map((result, index) => {
-            return (<div key={index}>
-              <Question question={result.question} correctAnswer={result.correct_answer} 
-              color={color} id={index} parentHandler={this.questionResponseHandler}/>
-              </div> )
-          })
-        }
-        <Link to='/'>Home</Link>
-        <Link to='/Score' onClick={() => this.handleResultsSubmit(dispatch)} >Proceed</Link>
+        {/* <div className='scoreIndicator'>
+          {scoreBody}
+        </div> */}
       </div>
     )
   }

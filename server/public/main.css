@@ -25,6 +25,15 @@ h2 {
   text-align: center;
   }
 
+  h3 {
+    font-family: 'rubber';
+    font-size: 2vw;
+    letter-spacing: 0.01em;
+    text-align: center;
+    }
+  
+
+
   p {
     font-family: 'Abel', sans-serif;
     font-size: 1.9vw;
@@ -34,6 +43,7 @@ h2 {
   button {
     background: none;
     border: none;
+    outline: none;
     font-family: 'rubber';
     letter-spacing: 0.01em;
     align-items: center;
@@ -48,7 +58,7 @@ h2 {
   }
 
 .mainContainer {
-  background-image: url(./Images/2Films.png);
+  background-image: url(./Images/1None.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
@@ -77,6 +87,14 @@ h2 {
   text-decoration: underline black;
 }
 
+.contentContainer h3 {
+  margin-top: 0;
+ }
+
+.categoryHead {
+  text-transform: uppercase;
+}
+
 .contentContainer p {
   margin-top: 0;
   margin-bottom: 10%;
@@ -86,6 +104,12 @@ h2 {
 
 .contentContainer button {
   font-size: 3.5vw;
+  width: 100%;
+  margin-bottom: 2%;
+ }
+
+.questionContainer button {
+  font-size: 1vw;
   width: 100%;
   margin-bottom: 2%;
  }
