@@ -139,8 +139,8 @@ class Quiz extends React.Component {
     const {categorySelected} = this.props
     const currentScore = this.state.score
     const previousScore = this.state.previous
-    const scoreBody = 'Previous Score: ' + previousScore + ' > ' + highName
     const highName = this.state.highname
+    const scoreBody = 'Previous Score: ' + previousScore + ' > ' + highName
     const dynamicStyling = this.categoryFormatting(categorySelected)
     const color = dynamicStyling.colour
     const image = dynamicStyling.image

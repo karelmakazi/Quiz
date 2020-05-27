@@ -206,12 +206,12 @@ function eventHandler(dispatch) {
 function Home(props) {
   var dispatch = props.dispatch;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "homeWrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "BAMBOOZLE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "buttonWrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Select a category"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "buttons"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "mainContainer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "contentContainer shadow"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "QUIZZICAL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A competative quiz game guaranteed to lose you more friends than Monopoly."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "buttonContainer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "SELECT YOUR FAVOURITE CATEGORY:")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/Quiz"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "categoryAnimals",
@@ -219,7 +219,7 @@ function Home(props) {
     onClick: function onClick() {
       return eventHandler(dispatch);
     }
-  }, " Animals ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, " ANIMALS ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/Quiz"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "categoryFilms",
@@ -227,7 +227,7 @@ function Home(props) {
     onClick: function onClick() {
       return eventHandler(dispatch);
     }
-  }, " Films ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, " FILMS ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/Quiz"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "categoryScience",
@@ -235,7 +235,7 @@ function Home(props) {
     onClick: function onClick() {
       return eventHandler(dispatch);
     }
-  }, " Science ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, " SCIENCE ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/Quiz"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "categoryHistory",
@@ -243,7 +243,7 @@ function Home(props) {
     onClick: function onClick() {
       return eventHandler(dispatch);
     }
-  }, " History ")))));
+  }, " HISTORY "))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])()(Home));
@@ -585,8 +585,8 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
       var categorySelected = this.props.categorySelected;
       var currentScore = this.state.score;
       var previousScore = this.state.previous;
-      var scoreBody = 'Previous Score: ' + previousScore + ' > ' + highName;
       var highName = this.state.highname;
+      var scoreBody = 'Previous Score: ' + previousScore + ' > ' + highName;
       var dynamicStyling = this.categoryFormatting(categorySelected);
       var color = dynamicStyling.colour;
       var image = dynamicStyling.image;
