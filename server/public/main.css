@@ -12,12 +12,23 @@ body {
   justify-content: center;
 }
 
+h1 {
+  font-family: 'rubber';
+  font-size: 6.2vw;
+  letter-spacing: 0.01em;
+}
+
 h2 {
   font-family: 'rubber';
-  font-size: 1.65vw;
+  font-size: 3.5vw;
   letter-spacing: 0.01em;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  }
+
+  p {
+    font-family: 'Abel', sans-serif;
+    font-size: 1.9vw;
+    text-align: center;
   }
 
   button {
@@ -31,9 +42,9 @@ h2 {
   }
 
   .shadow {
-    /* -webkit-box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.392);  
-    -moz-box-shadow:    3px 3px 10px rgba(0, 0, 0, 0.392); */
-    box-shadow:         .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
+    -webkit-box-shadow: .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
+    -moz-box-shadow: .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
+    box-shadow: .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
   }
 
 .mainContainer {
@@ -58,14 +69,19 @@ h2 {
 
 .contentContainer h1 {
   padding-top: 30px;
-  font-family: 'rubber';
-  font-size: 6vw;
-  letter-spacing: 0.01em;
-  /* border-bottom: 0.07em solid black; */
+  margin-bottom: 0; 
 }
 
 .contentContainer h2 {
+  margin-bottom: 2.5%;
+  text-decoration: underline black;
+}
+
+.contentContainer p {
+  margin-top: 0;
   margin-bottom: 10%;
+  padding-left: 12%;
+  padding-right: 12%;
 }
 
 .contentContainer button {
@@ -75,26 +91,32 @@ h2 {
  }
 
 .buttonContainer {
-  /* display: flex;
-  flex-direction: column; */
   margin: 0 auto;
   margin-top: -6%;
   width: 80%;
   height: 80%;
 }
 
-/* .buttons {
-  text-align: center;
-} */
+/* CATEGORY COLOURS */
+.categoryFilms {
+  color: #D66C2A;
+}
 
-/* .buttonContainer button, input[type="submit"], input[type="reset"] {
-	background: none;
-	border: none;
-	padding: 10px;
-  font: inherit;
-	cursor: pointer;
-  outline: inherit;
-} */
+.categoryAnimals {
+  color: #C33038;
+}
+
+.categoryScience {
+  color: #73A7E3;
+}
+
+.categoryHistory {
+  color: #702C68;
+}
+
+
+
+
 
 .divHistory {
   display: flex;

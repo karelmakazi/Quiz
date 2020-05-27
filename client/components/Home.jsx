@@ -17,20 +17,20 @@ function Home (props) {
             <div className="contentContainer shadow">
               <h1>QUIZZICAL</h1>
               <p>
-                A competative quiz game guaranteed to lose you more friends than Monopoly.
+                A competetive quiz game guaranteed to lose you more friends than Monopoly.
               </p>
               <div className="buttonContainer">
                 <div>
                   <h2>
-                  SELECT YOUR FAVOURITE CATEGORY:
+                  CATEGORIES
                   </h2>
                 </div>
                 <div>
-                  <Link to='/Quiz'><button className='categoryAnimals' value='Animals' 
-                    onClick={() => eventHandler(dispatch)}> ANIMALS </button>
-                  </Link>
                   <Link to='/Quiz'><button className='categoryFilms' value='Films' 
                     onClick={() => eventHandler(dispatch)}> FILMS </button>
+                  </Link>
+                  <Link to='/Quiz'><button className='categoryAnimals' value='Animals' 
+                    onClick={() => eventHandler(dispatch)}> ANIMALS </button>
                   </Link>
                   <Link to='/Quiz'><button className='categoryScience' value='Science' 
                     onClick={() => eventHandler(dispatch)}> SCIENCE </button>
