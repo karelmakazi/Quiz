@@ -64,22 +64,15 @@ class ScoreReport extends Component {
                   <label htmlFor='userName'>ENTER YOUR NAME </label>
                   <input id='userName' value={this.state.name} name='name' onChange={this.handleChange} />
                   <div className='footerNav' style={{color: catColor}} onClick={this.handleSubmit}>
-                  <Link to='/' className='footerNav'>SUBMIT SCORE </Link>
-                    {/* <button className='saveName'> Save </button> */}
+                    <Link to='/' className='footerNav'>SUBMIT SCORE </Link>
                   </div>
               </div>
-
-
             </div>
-
         </div>
       </div>
-    );
+    )
   }
 }
-
-
-
 
 function mapStateToProps (state) {
   return {
