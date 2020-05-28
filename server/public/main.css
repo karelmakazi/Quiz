@@ -172,6 +172,7 @@ height: 75%;
   font-size: 1vw;
   width: 7%;
   padding-top: 2%;
+  padding-left: 2%;
   text-align: center;
  }
 
@@ -212,3 +213,50 @@ height: 75%;
   font-size: 1vw;
  }
 
+.reportSection {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reportBark {
+  margin-top: 2.5%;
+  margin-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-family: 'rubber';
+  font-size: 3vw;
+  line-height: 110%;
+  text-decoration: none;
+  text-align: center;
+}
+
+.reportScore {
+  font-family: 'rubber';
+  font-size: 3vw;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nameEntry {
+  margin-top: 8vw;
+  padding-top: 2%;
+  height: 25%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-family: 'rubber';
+  font-size: 2vw;
+}
+
+input {
+  width: 60%;
+  height: 1.5vw;
+  margin-top: 0.5vw;
+  margin-bottom: 1.5vw;
+}

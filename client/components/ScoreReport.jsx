@@ -13,6 +13,8 @@ class ScoreReport extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.categoryFormatting = this.categoryFormatting.bind(this)
+
   }
 
   //EVENT HANDLERS
@@ -27,27 +29,52 @@ class ScoreReport extends Component {
     addName(this.state)
   }
 
+  categoryFormatting(category){
+    switch (category){
+      case 'Animals':
+        return '#C33038' 
+      case 'Films':
+        return '#D66C2A' 
+      case 'Science':
+        return '#73A7E3' 
+      case 'History':
+        return '#702C68' 
+      default:
+        return 'black' 
+    }
+ }
 
   render() {
-    let {categorySelected, currentScore, previousScore, highName} = this.props
-    let scoreFeedback = (currentScore > previousScore) ? 'You beat ' + highName + "'s highscore!" : highName + "'s highscore still stands!"
+    let {categorySelected, currentScore, previousScore, highName, color} = this.props
+    let catColor = this.categoryFormatting(categorySelected)
+    let scoreFeedback = (currentScore > previousScore) ? 'You beat ' + highName + "'s " +  categorySelected + " highscore!" 
+    : highName + "'s " + categorySelected + " highscore still stands!"
     
 
     return (
-      <>
-        <div>
-          <h1>SCORE: {categorySelected}</h1>
-          {scoreFeedback}
-          <h3>Your Score: {currentScore} High Score: {previousScore}</h3>
-        </div>
-        <div className='nameEntry'>
-            <label htmlFor='userName'>Name: </label>
-            <input id='userName' value={this.state.name} name='name' onChange={this.handleChange} />
-              <div onClick={this.handleSubmit}>
-                <button className='saveName'> Save </button>
+      <div className="mainContainer">
+        <div className="contentContainer shadow">
+
+            <div className='reportSection'>
+              <h1>QUIZZICAL</h1>
+              <div className='reportBark' style={{color: catColor}}>{scoreFeedback}</div>
+              <div className='reportScore' >HIGHSCORE: {previousScore}</div>
+              <div className='reportScore' >YOUR SCORE: {currentScore}</div>
+
+              <div className='nameEntry' style={{borderTop: `3px solid ${catColor}`, borderBottom: `3px solid ${catColor}`}}>
+                  <label htmlFor='userName'>ENTER YOUR NAME </label>
+                  <input id='userName' value={this.state.name} name='name' onChange={this.handleChange} />
+                  <div className='footerNav' style={{color: catColor}} onClick={this.handleSubmit}>
+                    SUBMIT SCORE
+                    {/* <button className='saveName'> Save </button> */}
+                  </div>
               </div>
-          </div>
-      </>
+
+
+            </div>
+
+        </div>
+      </div>
     );
   }
 }
@@ -60,8 +87,8 @@ function mapStateToProps (state) {
     categorySelected: state.quizDetail,
     currentScore: state.reportDetail[0].currentScore,
     previousScore: state.reportDetail[0].previousScore,
-    highName: state.reportDetail[0].highName
-  }
+    highName: state.reportDetail[0].highName,
+    }
 }
 
 export default connect(mapStateToProps)(ScoreReport)

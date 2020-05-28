@@ -91,13 +91,13 @@ class Quiz extends React.Component {
     let scoreCarrier = {
       previousScore: this.state.previous,
       currentScore: this.state.score,
-      highName: this.state.highname
+      highName: this.state.highname,
       }
     dispatch (setScoreTransfer(scoreCarrier))
   }
 
    //SCORING
-  questionResponseHandler(response, currentScore){
+  questionResponseHandler(response){
      let nowScore = this.state.score
      let newScore = nowScore + response
 

@@ -548,7 +548,7 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
 
   }, {
     key: "questionResponseHandler",
-    value: function questionResponseHandler(response, currentScore) {
+    value: function questionResponseHandler(response) {
       var nowScore = this.state.score;
       var newScore = nowScore + response;
       this.setState({
@@ -723,6 +723,7 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.categoryFormatting = _this.categoryFormatting.bind(_assertThisInitialized(_this));
     return _this;
   } //EVENT HANDLERS
 
@@ -739,28 +740,71 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
       Object(_api__WEBPACK_IMPORTED_MODULE_2__["addName"])(this.state);
     }
   }, {
+    key: "categoryFormatting",
+    value: function categoryFormatting(category) {
+      switch (category) {
+        case 'Animals':
+          return '#C33038';
+
+        case 'Films':
+          return '#D66C2A';
+
+        case 'Science':
+          return '#73A7E3';
+
+        case 'History':
+          return '#702C68';
+
+        default:
+          return 'black';
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
           categorySelected = _this$props.categorySelected,
           currentScore = _this$props.currentScore,
           previousScore = _this$props.previousScore,
-          highName = _this$props.highName;
-      var scoreFeedback = currentScore > previousScore ? 'You beat ' + highName + "'s highscore!" : highName + "'s highscore still stands!";
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "SCORE: ", categorySelected), scoreFeedback, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Your Score: ", currentScore, " High Score: ", previousScore)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nameEntry"
+          highName = _this$props.highName,
+          color = _this$props.color;
+      var catColor = this.categoryFormatting(categorySelected);
+      var scoreFeedback = currentScore > previousScore ? 'You beat ' + highName + "'s " + categorySelected + " highscore!" : highName + "'s " + categorySelected + " highscore still stands!";
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mainContainer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "contentContainer shadow"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "reportSection"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "QUIZZICAL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "reportBark",
+        style: {
+          color: catColor
+        }
+      }, scoreFeedback), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "reportScore"
+      }, "HIGHSCORE: ", previousScore), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "reportScore"
+      }, "YOUR SCORE: ", currentScore), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nameEntry",
+        style: {
+          borderTop: "3px solid ".concat(catColor),
+          borderBottom: "3px solid ".concat(catColor)
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "userName"
-      }, "Name: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "ENTER YOUR NAME "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "userName",
         value: this.state.name,
         name: "name",
         onChange: this.handleChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footerNav",
+        style: {
+          color: catColor
+        },
         onClick: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "saveName"
-      }, " Save "))));
+      }, "SUBMIT SCORE")))));
     }
   }]);
 
