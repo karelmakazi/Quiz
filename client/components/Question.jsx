@@ -25,7 +25,7 @@ class Question extends React.Component {
       let responseValue = event.target.value
       let resCode = (responseValue === answer) ? 1 : 0
       this.feedback = (resCode === 1) ? 'CORRECT' : 'WRONG'
-      this.feedbackColour = (resCode === 1) ? 'green' : 'violet'
+      this.feedbackColour = (resCode === 1) ? 'green' : '#C33038'
       this.props.parentHandler(resCode)
       this.setState({ answered: 1 })
     } else {
@@ -38,19 +38,28 @@ class Question extends React.Component {
     const answer = this.props.correctAnswer
     const number = 'Q' + (this.props.id + 1) + '. '
     const color = this.props.color
+    let display = (this.state.answered === 1)? 'none' : ''
+    let feedbackDisplay = (this.state.answered === 0)? 'none' : ''
     let resultIndicator = this.feedback
    
     return (
       <div className='questionContainer'>
+        <div className='questionNumber' style={{color: color}}>
+          {number}
+        </div>
         <div className='questionBody'>
-          <span style={{color: color}}>{number}</span> {question}
+          {question}
         </div>
         <div className='questionAnswers'>
-          <button value={'True'} onClick={() => this.quizAnswerHandler(answer)}>True</button>
-          <button value={'False'} onClick={() => this.quizAnswerHandler(answer)}>False</button>
-        </div>
-        <div className='resultIndicator' style={{color:this.feedbackColour}}>
-          {resultIndicator}
+          <div className='twoOptions' style={{borderLeft: `3px solid ${color}`}}>
+            <button style={{display:`${display}`}} value={'True'} 
+              onClick={() => this.quizAnswerHandler(answer)}>TRUE</button>
+            <button style={{display:`${display}`}} value={'False'} 
+              onClick={() => this.quizAnswerHandler(answer)}>FALSE</button>
+            <div className='resultIndicator' style={{display:`${feedbackDisplay}`, color:this.feedbackColour}}>
+              {resultIndicator}
+            </div>
+          </div>
         </div>
       </div>
     )

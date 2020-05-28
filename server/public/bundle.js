@@ -325,7 +325,7 @@ var Question = /*#__PURE__*/function (_React$Component) {
         var responseValue = event.target.value;
         var resCode = responseValue === answer ? 1 : 0;
         this.feedback = resCode === 1 ? 'CORRECT' : 'WRONG';
-        this.feedbackColour = resCode === 1 ? 'green' : 'violet';
+        this.feedbackColour = resCode === 1 ? 'green' : '#C33038';
         this.props.parentHandler(resCode);
         this.setState({
           answered: 1
@@ -343,33 +343,48 @@ var Question = /*#__PURE__*/function (_React$Component) {
       var answer = this.props.correctAnswer;
       var number = 'Q' + (this.props.id + 1) + '. ';
       var color = this.props.color;
+      var display = this.state.answered === 1 ? 'none' : '';
+      var feedbackDisplay = this.state.answered === 0 ? 'none' : '';
       var resultIndicator = this.feedback;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "questionContainer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "questionBody"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "questionNumber",
         style: {
           color: color
         }
-      }, number), " ", question), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "questionBody"
+      }, question), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "questionAnswers"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "twoOptions",
+        style: {
+          borderLeft: "3px solid ".concat(color)
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        style: {
+          display: "".concat(display)
+        },
         value: 'True',
         onClick: function onClick() {
           return _this2.quizAnswerHandler(answer);
         }
-      }, "True"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "TRUE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        style: {
+          display: "".concat(display)
+        },
         value: 'False',
         onClick: function onClick() {
           return _this2.quizAnswerHandler(answer);
         }
-      }, "False")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "FALSE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "resultIndicator",
         style: {
+          display: "".concat(feedbackDisplay),
           color: this.feedbackColour
         }
-      }, resultIndicator));
+      }, resultIndicator))));
     }
   }]);
 
@@ -586,7 +601,9 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
       var currentScore = this.state.score;
       var previousScore = this.state.previous;
       var highName = this.state.highname;
-      var scoreBody = 'Previous Score: ' + previousScore + ' > ' + highName;
+      var highScore = 'Highscore: ' + highName + ' ' + previousScore + '.';
+      var yourScore = ' Your Score: ' + currentScore + '.';
+      var scoreBody = highScore + yourScore;
       var dynamicStyling = this.categoryFormatting(categorySelected);
       var color = dynamicStyling.colour;
       var image = dynamicStyling.image;
@@ -602,8 +619,11 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
         style: {
           color: color
         }
-      }, " ", categorySelected), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Your Score: ", currentScore), this.state.results.map(function (result, index) {
+      }, " ", categorySelected), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " ", scoreBody, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mapContainer"
+      }, this.state.results.map(function (result, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "question",
           key: index
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Question__WEBPACK_IMPORTED_MODULE_4__["default"], {
           question: result.question,
@@ -612,14 +632,20 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
           id: index,
           parentHandler: _this3.questionResponseHandler
         }));
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/"
-      }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footerContainer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/",
+        className: "footerNav"
+      }, "HOME"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/Score",
+        className: "footerNav",
         onClick: function onClick() {
           return _this3.handleResultsSubmit(dispatch);
         }
-      }, "Proceed")));
+      }, "SCORE"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "scoreIndicator"
+      }, scoreBody));
     }
   }]);
 

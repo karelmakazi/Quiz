@@ -140,7 +140,10 @@ class Quiz extends React.Component {
     const currentScore = this.state.score
     const previousScore = this.state.previous
     const highName = this.state.highname
-    const scoreBody = 'Previous Score: ' + previousScore + ' > ' + highName
+    const highScore = 'Highscore: ' + highName + ' ' + previousScore + '.'
+    const yourScore = ' Your Score: ' + currentScore + '.'
+    let scoreBody = highScore + yourScore
+
     const dynamicStyling = this.categoryFormatting(categorySelected)
     const color = dynamicStyling.colour
     const image = dynamicStyling.image
@@ -148,24 +151,26 @@ class Quiz extends React.Component {
     return (
       <div className="mainContainer" style={{backgroundImage:`url(${image})`}}>
         <div className="contentContainer shadow">
-
-             
-              <h1 className="categoryHead" style={{color: color}}> {categorySelected}</h1>
-              <h3> Your Score: {currentScore}</h3>
-              { this.state.results.map((result, index) => {
-                  return (<div key={index}>
-                    <Question question={result.question} correctAnswer={result.correct_answer} 
-                    color={color} id={index} parentHandler={this.questionResponseHandler}/>
-                    </div> )
-                })
-              }
-              <Link to='/'>Home</Link>
-              <Link to='/Score' onClick={() => this.handleResultsSubmit(dispatch)} >Proceed</Link>
-
+          <h1 className="categoryHead" style={{color: color}}> {categorySelected}</h1>
+          <h3> {scoreBody} </h3>
+          <div className='mapContainer'>
+            { this.state.results.map((result, index) => {
+                return (<div className='question' key={index}>
+                  <Question question={result.question} correctAnswer={result.correct_answer} 
+                  color={color} id={index} parentHandler={this.questionResponseHandler}/>
+                  </div> )
+              })
+            }
+          </div>
+              <div className='footerContainer'>
+                <Link to='/' className='footerNav'>HOME</Link>
+                <Link to='/Score' className='footerNav' 
+                  onClick={() => this.handleResultsSubmit(dispatch)} >SCORE</Link>
+              </div>
         </div>
-        {/* <div className='scoreIndicator'>
+        <div className='scoreIndicator'>
           {scoreBody}
-        </div> */}
+        </div>
       </div>
     )
   }
