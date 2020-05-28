@@ -20,11 +20,7 @@ function Home (props) {
                 A competetive quiz game guaranteed to lose you more friends than Monopoly.
               </p>
               <div className="buttonContainer">
-                <div>
-                  <h2>
-                  CATEGORIES
-                  </h2>
-                </div>
+                <div><h2>CATEGORIES</h2></div>
                 <div>
                   <Link to='/Quiz'><button className='categoryFilms' value='Films' 
                     onClick={() => eventHandler(dispatch)}> FILMS </button>

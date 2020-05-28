@@ -12,14 +12,7 @@ class Question extends React.Component {
   feedbackColour ='white'
   resCode = 3
 
-  // quizAnswerHandler(answer) {
-  //   let responseValue = event.target.value
-  //   let resCode = (responseValue === answer) ? 1 : 0
-  //   this.feedback = (resCode === 1) ? 'CORRECT' : 'WRONG'
-  //   this.feedbackColour = (resCode === 1) ? 'green' : 'violet'
-  //   this.props.parentHandler(resCode)
-  // }
-
+  //MANAGES ANSWERS
   quizAnswerHandler(answer) {
     if (this.state.answered === 0) {
       let responseValue = event.target.value
@@ -32,9 +25,16 @@ class Question extends React.Component {
       console.log('already answered that')
       }
     } 
-
+  
+  //STRIPS HTML ENTITIES FROM CODE
+  decodeHTML(html) {
+      var txt = document.createElement('textarea');
+      txt.innerHTML = html;
+      return txt.value;
+    }
+  
   render() {
-    const question = this.props.question
+    let question = this.decodeHTML(this.props.question) 
     const answer = this.props.correctAnswer
     const number = 'Q' + (this.props.id + 1) + '. '
     const color = this.props.color

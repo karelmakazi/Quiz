@@ -313,13 +313,7 @@ var Question = /*#__PURE__*/function (_React$Component) {
 
   _createClass(Question, [{
     key: "quizAnswerHandler",
-    // quizAnswerHandler(answer) {
-    //   let responseValue = event.target.value
-    //   let resCode = (responseValue === answer) ? 1 : 0
-    //   this.feedback = (resCode === 1) ? 'CORRECT' : 'WRONG'
-    //   this.feedbackColour = (resCode === 1) ? 'green' : 'violet'
-    //   this.props.parentHandler(resCode)
-    // }
+    //MANAGES ANSWERS
     value: function quizAnswerHandler(answer) {
       if (this.state.answered === 0) {
         var responseValue = event.target.value;
@@ -333,13 +327,21 @@ var Question = /*#__PURE__*/function (_React$Component) {
       } else {
         console.log('already answered that');
       }
+    } //STRIPS HTML ENTITIES FROM CODE
+
+  }, {
+    key: "decodeHTML",
+    value: function decodeHTML(html) {
+      var txt = document.createElement('textarea');
+      txt.innerHTML = html;
+      return txt.value;
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var question = this.props.question;
+      var question = this.decodeHTML(this.props.question);
       var answer = this.props.correctAnswer;
       var number = 'Q' + (this.props.id + 1) + '. ';
       var color = this.props.color;
@@ -477,7 +479,7 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var categorySelected = this.props.categorySelected; //QUIZ CONTENT
+      var categorySelected = this.props.categorySelected; //GET QUIZ CONTENT
 
       var newAPI = this.apiConstructor(categorySelected);
       superagent__WEBPACK_IMPORTED_MODULE_3___default.a.get(newAPI).then(function (res) {
@@ -534,7 +536,8 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(event) {
       event.preventDefault();
       Object(_api__WEBPACK_IMPORTED_MODULE_5__["addName"])(this.state);
-    }
+    } //REDUX 
+
   }, {
     key: "handleResultsSubmit",
     value: function handleResultsSubmit(dispatch) {
@@ -738,7 +741,8 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
     value: function handleSubmit(event) {
       event.preventDefault();
       Object(_api__WEBPACK_IMPORTED_MODULE_2__["addName"])(this.state);
-    }
+    } //DYNAMIC FORMATTING
+
   }, {
     key: "categoryFormatting",
     value: function categoryFormatting(category) {
@@ -804,7 +808,10 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
           color: catColor
         },
         onClick: this.handleSubmit
-      }, "SUBMIT SCORE")))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        to: "/",
+        className: "footerNav"
+      }, "SUBMIT SCORE "))))));
     }
   }]);
 

@@ -7,7 +7,6 @@ import { addName } from '../api'
 import { setScoreTransfer } from '../actions'
 
 //SCORING
-
 var count = 0
 
 class Quiz extends React.Component {
@@ -20,18 +19,16 @@ class Quiz extends React.Component {
       name:'',
       highname:'',
     }
-
     this.questionResponseHandler = this.questionResponseHandler.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleResultsSubmit = this.handleResultsSubmit.bind(this)
-
   }
 
   componentDidMount() { 
     const {categorySelected} = this.props
 
-    //QUIZ CONTENT
+    //GET QUIZ CONTENT
     const newAPI = this.apiConstructor(categorySelected)
     request.get(newAPI)
       .then(res => {
@@ -87,6 +84,7 @@ class Quiz extends React.Component {
     addName(this.state)
   }
 
+  //REDUX 
   handleResultsSubmit(dispatch){
     let scoreCarrier = {
       previousScore: this.state.previous,

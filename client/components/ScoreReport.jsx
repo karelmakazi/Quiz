@@ -29,6 +29,7 @@ class ScoreReport extends Component {
     addName(this.state)
   }
 
+  //DYNAMIC FORMATTING
   categoryFormatting(category){
     switch (category){
       case 'Animals':
@@ -54,18 +55,16 @@ class ScoreReport extends Component {
     return (
       <div className="mainContainer">
         <div className="contentContainer shadow">
-
             <div className='reportSection'>
               <h1>QUIZZICAL</h1>
               <div className='reportBark' style={{color: catColor}}>{scoreFeedback}</div>
               <div className='reportScore' >HIGHSCORE: {previousScore}</div>
               <div className='reportScore' >YOUR SCORE: {currentScore}</div>
-
               <div className='nameEntry' style={{borderTop: `3px solid ${catColor}`, borderBottom: `3px solid ${catColor}`}}>
                   <label htmlFor='userName'>ENTER YOUR NAME </label>
                   <input id='userName' value={this.state.name} name='name' onChange={this.handleChange} />
                   <div className='footerNav' style={{color: catColor}} onClick={this.handleSubmit}>
-                    SUBMIT SCORE
+                  <Link to='/' className='footerNav'>SUBMIT SCORE </Link>
                     {/* <button className='saveName'> Save </button> */}
                   </div>
               </div>
