@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addName } from '../api'
 import { Link } from 'react-router-dom'
+import { addName } from '../api'
 
 class ScoreReport extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class ScoreReport extends Component {
 
   }
 
-  //EVENT HANDLERS
+  // EVENT HANDLERS
   handleChange(event){
     this.setState({
       [event.target.name]:event.target.value
@@ -29,7 +29,7 @@ class ScoreReport extends Component {
     addName(this.state)
   }
 
-  //DYNAMIC FORMATTING
+  // DYNAMIC FORMATTING
   categoryFormatting(category){
     switch (category){
       case 'Animals':
@@ -46,28 +46,34 @@ class ScoreReport extends Component {
  }
 
   render() {
-    let {categorySelected, currentScore, previousScore, highName, color} = this.props
-    let catColor = this.categoryFormatting(categorySelected)
-    let scoreFeedback = (currentScore > previousScore) ? 'You beat ' + highName + "'s " +  categorySelected + " highscore!" 
-    : highName + "'s " + categorySelected + " highscore still stands!"
+    const {categorySelected, currentScore, previousScore, highName, color} = this.props
+    const catColor = this.categoryFormatting(categorySelected)
+    const scoreFeedback = (currentScore > previousScore) ? `You beat ${  highName  }'s ${   categorySelected  } highscore!` 
+    : `${highName  }'s ${  categorySelected  } highscore still stands!`
     
 
     return (
       <div className="mainContainer">
         <div className="contentContainer shadow">
-            <div className='reportSection'>
-              <h1>QUIZZICAL</h1>
-              <div className='reportBark' style={{color: catColor}}>{scoreFeedback}</div>
-              <div className='reportScore' >HIGHSCORE: {previousScore}</div>
-              <div className='reportScore' >YOUR SCORE: {currentScore}</div>
-              <div className='nameEntry' style={{borderTop: `3px solid ${catColor}`, borderBottom: `3px solid ${catColor}`}}>
-                  <label htmlFor='userName'>ENTER YOUR NAME </label>
-                  <input id='userName' value={this.state.name} name='name' onChange={this.handleChange} />
-                  <div className='footerNav' style={{color: catColor}} onClick={this.handleSubmit}>
-                    <Link to='/' className='footerNav'>SUBMIT SCORE </Link>
-                  </div>
+          <div className='reportSection'>
+            <h1>QUIZZICAL</h1>
+            <div className='reportBark' style={{color: catColor}}>{scoreFeedback}</div>
+            <div className='reportScore'>
+              HIGHSCORE:
+              {previousScore}
+            </div>
+            <div className='reportScore'>
+              YOUR SCORE:
+              {currentScore}
+            </div>
+            <div className='nameEntry' style={{borderTop: `3px solid ${catColor}`, borderBottom: `3px solid ${catColor}`}}>
+              <label htmlFor='userName'>ENTER YOUR NAME </label>
+              <input id='userName' value={this.state.name} name='name' onChange={this.handleChange} />
+              <div className='footerNav' style={{color: catColor}} onClick={this.handleSubmit}>
+                <Link to='/' className='footerNav'>SUBMIT SCORE </Link>
               </div>
             </div>
+          </div>
         </div>
       </div>
     )

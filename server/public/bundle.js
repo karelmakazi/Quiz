@@ -208,45 +208,50 @@ function Home(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mainContainer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "contentContainer shadow"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "QUIZZICAL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A competetive quiz game guaranteed to lose you more friends than Monopoly."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "buttonContainer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "CATEGORIES")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/Quiz"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "categoryFilms",
-    value: "Films",
-    onClick: function onClick() {
-      return eventHandler(dispatch);
-    }
-  }, " FILMS ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/Quiz"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "categoryAnimals",
-    value: "Animals",
-    onClick: function onClick() {
-      return eventHandler(dispatch);
-    }
-  }, " ANIMALS ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/Quiz"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "categoryScience",
-    value: "Science",
-    onClick: function onClick() {
-      return eventHandler(dispatch);
-    }
-  }, " SCIENCE ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/Quiz"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "categoryHistory",
-    value: "History",
-    onClick: function onClick() {
-      return eventHandler(dispatch);
-    }
-  }, " HISTORY "))))));
+    className: "slice1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sliceContent"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "FILMS"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "slice2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sliceContent"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "ANIMALS"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "slice3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sliceContent"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "SCIENCE"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "slice4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sliceContent"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "HISTORY")), "\u2018"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])()(Home));
+{
+  /* <div className="contentContainer shadow">
+   <h1>QUIZZICAL</h1>
+   <p>
+     A competetive quiz game guaranteed to lose you more friends than Monopoly.
+   </p>
+   <div className="buttonContainer">
+     <div><h2>CATEGORIES</h2></div>
+     <div>
+       <Link to='/Quiz'><button className='categoryFilms' value='Films' 
+         onClick={() => eventHandler(dispatch)}> FILMS </button>
+       </Link>
+       <Link to='/Quiz'><button className='categoryAnimals' value='Animals' 
+         onClick={() => eventHandler(dispatch)}> ANIMALS </button>
+       </Link>
+       <Link to='/Quiz'><button className='categoryScience' value='Science' 
+         onClick={() => eventHandler(dispatch)}> SCIENCE </button>
+       </Link>
+       <Link to='/Quiz'><button className='categoryHistory' value='History' 
+         onClick={() => eventHandler(dispatch)}> HISTORY </button>
+       </Link>
+     </div>
+   </div>
+  </div> */
+}
 
 /***/ }),
 
@@ -677,8 +682,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api */ "./client/api/index.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../api */ "./client/api/index.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -728,7 +733,7 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.categoryFormatting = _this.categoryFormatting.bind(_assertThisInitialized(_this));
     return _this;
-  } //EVENT HANDLERS
+  } // EVENT HANDLERS
 
 
   _createClass(ScoreReport, [{
@@ -740,8 +745,8 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
     key: "handleSubmit",
     value: function handleSubmit(event) {
       event.preventDefault();
-      Object(_api__WEBPACK_IMPORTED_MODULE_2__["addName"])(this.state);
-    } //DYNAMIC FORMATTING
+      Object(_api__WEBPACK_IMPORTED_MODULE_3__["addName"])(this.state);
+    } // DYNAMIC FORMATTING
 
   }, {
     key: "categoryFormatting",
@@ -773,7 +778,7 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
           highName = _this$props.highName,
           color = _this$props.color;
       var catColor = this.categoryFormatting(categorySelected);
-      var scoreFeedback = currentScore > previousScore ? 'You beat ' + highName + "'s " + categorySelected + " highscore!" : highName + "'s " + categorySelected + " highscore still stands!";
+      var scoreFeedback = currentScore > previousScore ? "You beat ".concat(highName, "'s ").concat(categorySelected, " highscore!") : "".concat(highName, "'s ").concat(categorySelected, " highscore still stands!");
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mainContainer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -787,9 +792,9 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
         }
       }, scoreFeedback), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "reportScore"
-      }, "HIGHSCORE: ", previousScore), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "HIGHSCORE:", previousScore), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "reportScore"
-      }, "YOUR SCORE: ", currentScore), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "YOUR SCORE:", currentScore), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nameEntry",
         style: {
           borderTop: "3px solid ".concat(catColor),
@@ -808,7 +813,7 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
           color: catColor
         },
         onClick: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/",
         className: "footerNav"
       }, "SUBMIT SCORE "))))));

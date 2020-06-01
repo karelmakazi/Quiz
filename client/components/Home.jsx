@@ -14,7 +14,28 @@ function Home (props) {
 
   return (
           <div className="mainContainer">
-            <div className="contentContainer shadow">
+          
+            <div className='slice1'>
+              <div className='sliceContent'><h2>FILMS</h2></div>
+            </div>
+            <div className='slice2'>
+              <div className='sliceContent'><h2>ANIMALS</h2></div>
+            </div>
+            <div className='slice3'>
+              <div className='sliceContent'><h2>SCIENCE</h2></div>
+            </div>
+            <div className='slice4'>
+              <div className='sliceContent'><h2>HISTORY</h2></div>‘
+            </div>
+
+          </div>    
+  )
+}
+
+export default connect () (Home)
+
+
+            {/* <div className="contentContainer shadow">
               <h1>QUIZZICAL</h1>
               <p>
                 A competetive quiz game guaranteed to lose you more friends than Monopoly.
@@ -36,9 +57,4 @@ function Home (props) {
                   </Link>
                 </div>
               </div>
-            </div>
-          </div>
-  )
-}
-
-export default connect () (Home)
+            </div> */}

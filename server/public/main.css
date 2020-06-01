@@ -5,68 +5,100 @@
   font-weight: 100;
 }
 
+
+/* GLOBAL */
 body {
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: bisque;
 }
+button {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'rubber';
+  letter-spacing: 0.01em;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+input {
+  width: 60%;
+  height: 1.5vw;
+  margin-top: 0.5vw;
+  margin-bottom: 1.5vw;
+}
+
+/* TYPOGRAPHY */
 
 h1 {
   font-family: 'rubber';
   font-size: 6.2vw;
   letter-spacing: 0.01em;
 }
-
+.contentContainer h1 {
+  padding-top: 30px;
+  margin-bottom: 0; 
+}
 h2 {
   font-family: 'rubber';
   font-size: 3.5vw;
   letter-spacing: 0.01em;
   text-align: center;
   }
-
-  h3 {
-    font-family: 'rubber';
-    font-size: 2vw;
-    letter-spacing: 0.01em;
-    text-align: center;
-    }
-  
-
-
-  p {
-    font-family: 'Abel', sans-serif;
-    font-size: 1.9vw;
-    text-align: center;
+.contentContainer h2 {
+  margin-bottom: 2.5%;
+  text-decoration: underline black;
+}
+.sliceContent h2{
+margin: 0;
+font-size: 4vw;
+text-align: left;
+color: cornsilk;
+}
+h3 {
+  font-family: 'rubber';
+  font-size: 2vw;
+  letter-spacing: 0.01em;
+  text-align: center;
   }
-
-  button {
-    background: none;
-    border: none;
-    outline: none;
-    font-family: 'rubber';
-    letter-spacing: 0.01em;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.contentContainer h3 {
+  margin-top: -1.5vw;
+  font-size: 1.25vw;
   }
-
-  .shadow {
-    -webkit-box-shadow: .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
-    -moz-box-shadow: .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
-    box-shadow: .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
-  }
-
-.mainContainer {
-  background-image: url(./Images/1None.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  padding-left: 5vw;
-  margin: 0 auto;
+p {
+  font-family: 'Abel', sans-serif;
+  font-size: 1.9vw;
+  text-align: center;
+}
+.contentContainer p {
+  margin-top: 0;
+  margin-bottom: 10%;
+  padding-left: 12%;
+  padding-right: 12%;
+}
+label {
+  font-family: 'rubber';
+  font-size: 2vw;
+}
+.categoryHead {
+  text-transform: uppercase;
+  margin-top: 0;
+  font-size: 5vw;
 }
 
+/* LAYOUTS */
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  /* background-image: url(./Images/1None.png);
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* padding-left: 5vw; */
+}
 .contentContainer {
   display: flex;
   flex-direction: column;
@@ -76,51 +108,86 @@ h2 {
   background-color:whitesmoke;
 }
 
-.contentContainer h1 {
-  padding-top: 30px;
-  margin-bottom: 0; 
+
+
+
+  /* CSS BACKGROUND */
+/* #backgroundContainer {
+  height: 100vh;
+  height: 100vh;
+  background-color: cornsilk;
+  font-family: 'rubber';
+  font-size: 30px;
+} */
+
+.categoryFilms {
+  color: #D66C2A;
+}
+.categoryAnimals {
+  color: #C33038;
+}
+.categoryScience {
+  color: #73A7E3;
+}
+.categoryHistory {
+  color: #702C68;
 }
 
-.contentContainer h2 {
-  margin-bottom: 2.5%;
-  text-decoration: underline black;
+
+.slice1 {
+  height: 15%;
+  width: 100%;
+  transform: skewY(-20deg);
+  background-color: #D66C2A;
 }
 
-.contentContainer h3 {
-  margin-top: -1.5vw;
-  font-size: 1.25vw;
- }
-
-.categoryHead {
-  text-transform: uppercase;
-  margin-top: 0;
-  font-size: 5vw;
+.slice2 {
+  height: 15%;
+  width: 100%;
+  transform: skewY(-20deg);
+  background-color: #C33038;
+}
+.slice3 {
+  height: 15%;
+  width: 100%;
+  transform: skewY(-20deg);
+  background-color:#73A7E3;
+}
+.slice4 {
+  height: 15%;
+  width: 100%;
+  transform: skewY(-20deg);
+  background-color:  #702C68;
+}
+.sliceContent{
+  max-width: 50em;
+  margin-left: 30%;
+  transform:skew(18deg);
+  background-color: rgba(173, 208, 212, 0.221);
+  line-height: 100px;
+  white-space: nowrap;
 }
 
-.contentContainer p {
-  margin-top: 0;
-  margin-bottom: 10%;
-  padding-left: 12%;
-  padding-right: 12%;
+
+.shadow {
+  -webkit-box-shadow: .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
+  -moz-box-shadow: .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
+  box-shadow: .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
 }
 
 .mapContainer {
 height: 75%;
 }
-
-.contentContainer button {
-  font-size: 3.5vw;
-  width: 100%;
-  margin-bottom: 2%;
+.questionContainer {
+  display: flex;
+  flex-direction: row;
  }
-
 .buttonContainer {
   margin: 0 auto;
   margin-top: -6%;
   width: 80%;
   height: 80%;
 }
-
 .footerContainer {
   display: flex;
   flex-direction: row;
@@ -130,43 +197,22 @@ height: 75%;
   justify-content: center;
 }
 
-.footerNav {
-  font-family: 'rubber';
-  font-size: 2vw;
-  letter-spacing: 0.01em;
-  text-align: center;
-  margin-right: 2vw;
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+/* COMPONENTS */
+.contentContainer button {
+  font-size: 3.5vw;
+  width: 100%;
+  margin-bottom: 2%;
+ }
+.questionAnswers button {
+  font-size: 1vw;
+  text-align: left;
+  width: 100%;
+  height: 30%;
+  margin-bottom: 0;
 }
-
-/* CATEGORY COLOURS */
-.categoryFilms {
-  color: #D66C2A;
-}
-
-.categoryAnimals {
-  color: #C33038;
-}
-
-.categoryScience {
-  color: #73A7E3;
-}
-
-.categoryHistory {
-  color: #702C68;
-}
-
 .question {
   height: 10%;
 }
-
-.questionContainer {
-  display: flex;
-  flex-direction: row;
- }
-
 .questionNumber {
   font-family: 'rubber';
   font-size: 1vw;
@@ -174,8 +220,7 @@ height: 75%;
   padding-top: 2%;
   padding-left: 2%;
   text-align: center;
- }
-
+  }
 .questionBody{
   width: 85%;
   height: 3vw;
@@ -186,25 +231,24 @@ height: 75%;
   font-family: 'Abel', sans-serif;
   font-size: 1.1vw;
 }
-
 .questionAnswers {
   width: 20%;
   height: 2vw;
   padding-top: 1%;
   }
-
 .twoOptions {
   padding-top: 0.8vw;
 }  
-
-.questionAnswers button {
-  font-size: 1vw;
-  text-align: left;
-  width: 100%;
-  height: 30%;
-  margin-bottom: 0;
-  }
-
+.footerNav {
+  font-family: 'rubber';
+  font-size: 2vw;
+  letter-spacing: 0.01em;
+  text-align: center;
+  margin-right: 2vw;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 .resultIndicator {
   padding-top: 0.8vw;
   padding-left: 4%;
@@ -212,14 +256,12 @@ height: 75%;
   font-family: 'rubber';
   font-size: 1vw;
  }
-
 .reportSection {
   height: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .reportBark {
   margin-top: 2.5%;
   margin-bottom: 5%;
@@ -231,14 +273,12 @@ height: 75%;
   text-decoration: none;
   text-align: center;
 }
-
 .reportScore {
   font-family: 'rubber';
   font-size: 3vw;
   text-decoration: none;
   text-align: center;
 }
-
 .nameEntry {
   margin-top: 8vw;
   padding-top: 2%;
@@ -247,16 +287,4 @@ height: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-label {
-  font-family: 'rubber';
-  font-size: 2vw;
-}
-
-input {
-  width: 60%;
-  height: 1.5vw;
-  margin-top: 0.5vw;
-  margin-bottom: 1.5vw;
 }
