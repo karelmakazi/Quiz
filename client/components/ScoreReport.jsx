@@ -48,12 +48,17 @@ class ScoreReport extends Component {
   render() {
     const {categorySelected, currentScore, previousScore, highName, color} = this.props
     const catColor = this.categoryFormatting(categorySelected)
+    const slice1 = (categorySelected == 'Films') ? 'FILMS' : ''
+    const slice2 = (categorySelected == 'Animals') ? 'ANIMALS' : ''
+    const slice3 = (categorySelected == 'Science') ? 'SCIENCE' : ''
+    const slice4 = (categorySelected == 'History') ? 'HISTORY' : ''
     const scoreFeedback = (currentScore > previousScore) ? `You beat ${  highName  }'s ${   categorySelected  } highscore!` 
     : `${highName  }'s ${  categorySelected  } highscore still stands!`
     
 
     return (
       <div className="mainContainer">
+
         <div className="contentContainer shadow">
           <div className='reportSection'>
             <h1>QUIZZICAL</h1>
@@ -75,6 +80,20 @@ class ScoreReport extends Component {
             </div>
           </div>
         </div>
+
+        <div className='slice1'>
+            <div className='sliceContent'><h2>{slice1}</h2></div>
+        </div>
+        <div className='slice2'>
+          <div className='sliceContent'><h2>{slice2}</h2></div>
+        </div>
+        <div className='slice3'>
+          <div className='sliceContent'><h2>{slice3}</h2></div>
+        </div>
+        <div className='slice4'>
+          <div className='sliceContent'><h2>{slice4}</h2></div>
+        </div>
+
       </div>
     )
   }

@@ -107,28 +107,18 @@ class Quiz extends React.Component {
 
    //CONDITIONAL FORMATTING
   categoryFormatting(category){
-      switch (category){
-        case 'Animals':
-          return { colour: '#C33038', 
-                  image: './Images/3Animals.png'
-                  }
-        case 'Films':
-                return { colour: '#D66C2A', 
-                image: './Images/2Films.png'
-                }
-        case 'Science':
-                return { colour: '#73A7E3', 
-                image: './Images/4Science.png'
-                }
-        case 'History':
-                return { colour: '#702C68', 
-                image: './Images/5History.png'
-                }
-        default:
-              return { colour: 'black', 
-              image: ''
-              }
-      }
+    switch (category){
+      case 'Animals':
+        return '#C33038' 
+      case 'Films':
+        return '#D66C2A' 
+      case 'Science':
+        return '#73A7E3' 
+      case 'History':
+        return '#702C68' 
+      default:
+        return 'black' 
+    }
    }
    
    render() {
@@ -141,13 +131,15 @@ class Quiz extends React.Component {
     const highScore = 'Highscore: ' + highName + ' ' + previousScore + '.'
     const yourScore = ' Your Score: ' + currentScore + '.'
     let scoreBody = highScore + yourScore
-
-    const dynamicStyling = this.categoryFormatting(categorySelected)
-    const color = dynamicStyling.colour
-    const image = dynamicStyling.image
+    const color = this.categoryFormatting(categorySelected)
+    const slice1 = (categorySelected == 'Films') ? 'FILMS' : ''
+    const slice2 = (categorySelected == 'Animals') ? 'ANIMALS' : ''
+    const slice3 = (categorySelected == 'Science') ? 'SCIENCE' : ''
+    const slice4 = (categorySelected == 'History') ? 'HISTORY' : ''
       
     return (
-      <div className="mainContainer" style={{backgroundImage:`url(${image})`}}>
+      <div className="mainContainer">
+
         <div className="contentContainer shadow">
           <h1 className="categoryHead" style={{color: color}}> {categorySelected}</h1>
           <h3> {scoreBody} </h3>
@@ -156,19 +148,30 @@ class Quiz extends React.Component {
                 return (<div className='question' key={index}>
                   <Question question={result.question} correctAnswer={result.correct_answer} 
                   color={color} id={index} parentHandler={this.questionResponseHandler}/>
-                  </div> )
+                  </div>)
               })
             }
           </div>
-              <div className='footerContainer'>
-                <Link to='/' className='footerNav'>HOME</Link>
-                <Link to='/Score' className='footerNav' 
-                  onClick={() => this.handleResultsSubmit(dispatch)} >SCORE</Link>
-              </div>
+          <div className='footerContainer'>
+            <Link to='/' className='footerNav'>HOME</Link>
+            <Link to='/Score' className='footerNav' 
+              onClick={() => this.handleResultsSubmit(dispatch)} >SCORE</Link>
+          </div>
         </div>
-        <div className='scoreIndicator'>
-          {scoreBody}
+
+        <div className='slice1'>
+            <div className='sliceContent'><h2>{slice1}</h2></div>
         </div>
+        <div className='slice2'>
+          <div className='sliceContent'><h2>{slice2}</h2></div>
+        </div>
+        <div className='slice3'>
+          <div className='sliceContent'><h2>{slice3}</h2></div>
+        </div>
+        <div className='slice4'>
+          <div className='sliceContent'><h2>{slice4}</h2></div>
+        </div>
+
       </div>
     )
   }

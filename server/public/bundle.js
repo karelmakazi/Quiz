@@ -259,32 +259,10 @@ function Home(props) {
     className: "slice4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sliceContent"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "HISTORY")), "\u2018"));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "HISTORY"))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])()(Home)); //  <div className="contentContainer shadow">
-//   <h1>QUIZZICAL</h1>
-//   <p>
-//     A competetive quiz game guaranteed to lose you more friends than Monopoly.
-//   </p>
-//   <div className="buttonContainer">
-//     <div><h2>CATEGORIES</h2></div>
-//     <div>
-//       <Link to='/Quiz'><button className='categoryFilms' value='Films' 
-//         onClick={() => eventHandler(dispatch)}> FILMS </button>
-//       </Link>
-//       <Link to='/Quiz'><button className='categoryAnimals' value='Animals' 
-//         onClick={() => eventHandler(dispatch)}> ANIMALS </button>
-//       </Link>
-//       <Link to='/Quiz'><button className='categoryScience' value='Science' 
-//         onClick={() => eventHandler(dispatch)}> SCIENCE </button>
-//       </Link>
-//       <Link to='/Quiz'><button className='categoryHistory' value='History' 
-//         onClick={() => eventHandler(dispatch)}> HISTORY </button>
-//       </Link>
-//     </div>
-//   </div>
-// </div>
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])()(Home));
 
 /***/ }),
 
@@ -602,34 +580,19 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
     value: function categoryFormatting(category) {
       switch (category) {
         case 'Animals':
-          return {
-            colour: '#C33038',
-            image: './Images/3Animals.png'
-          };
+          return '#C33038';
 
         case 'Films':
-          return {
-            colour: '#D66C2A',
-            image: './Images/2Films.png'
-          };
+          return '#D66C2A';
 
         case 'Science':
-          return {
-            colour: '#73A7E3',
-            image: './Images/4Science.png'
-          };
+          return '#73A7E3';
 
         case 'History':
-          return {
-            colour: '#702C68',
-            image: './Images/5History.png'
-          };
+          return '#702C68';
 
         default:
-          return {
-            colour: 'black',
-            image: ''
-          };
+          return 'black';
       }
     }
   }, {
@@ -645,14 +608,13 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
       var highScore = 'Highscore: ' + highName + ' ' + previousScore + '.';
       var yourScore = ' Your Score: ' + currentScore + '.';
       var scoreBody = highScore + yourScore;
-      var dynamicStyling = this.categoryFormatting(categorySelected);
-      var color = dynamicStyling.colour;
-      var image = dynamicStyling.image;
+      var color = this.categoryFormatting(categorySelected);
+      var slice1 = categorySelected == 'Films' ? 'FILMS' : '';
+      var slice2 = categorySelected == 'Animals' ? 'ANIMALS' : '';
+      var slice3 = categorySelected == 'Science' ? 'SCIENCE' : '';
+      var slice4 = categorySelected == 'History' ? 'HISTORY' : '';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "mainContainer",
-        style: {
-          backgroundImage: "url(".concat(image, ")")
-        }
+        className: "mainContainer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "contentContainer shadow"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -685,8 +647,22 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
           return _this3.handleResultsSubmit(dispatch);
         }
       }, "SCORE"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "scoreIndicator"
-      }, scoreBody));
+        className: "slice1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sliceContent"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, slice1))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slice2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sliceContent"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, slice2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slice3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sliceContent"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, slice3))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slice4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sliceContent"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, slice4))));
     }
   }]);
 
@@ -811,6 +787,10 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
           highName = _this$props.highName,
           color = _this$props.color;
       var catColor = this.categoryFormatting(categorySelected);
+      var slice1 = categorySelected == 'Films' ? 'FILMS' : '';
+      var slice2 = categorySelected == 'Animals' ? 'ANIMALS' : '';
+      var slice3 = categorySelected == 'Science' ? 'SCIENCE' : '';
+      var slice4 = categorySelected == 'History' ? 'HISTORY' : '';
       var scoreFeedback = currentScore > previousScore ? "You beat ".concat(highName, "'s ").concat(categorySelected, " highscore!") : "".concat(highName, "'s ").concat(categorySelected, " highscore still stands!");
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mainContainer"
@@ -849,7 +829,23 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/",
         className: "footerNav"
-      }, "SUBMIT SCORE "))))));
+      }, "SUBMIT SCORE "))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slice1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sliceContent"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, slice1))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slice2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sliceContent"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, slice2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slice3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sliceContent"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, slice3))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slice4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sliceContent"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, slice4))));
     }
   }]);
 
