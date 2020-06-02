@@ -26,12 +26,3 @@ function getScore(categorySelected, db = connection) {
       return (results)
     })
 }
-
-// function getScore (categorySelected, db = connection) {
-//   return db('leaderboard')
-//   .select('score as previous', 'name')
-//   .where({category: categorySelected})
-//   .then(results => {  
-//     return (results)
-//     })
-// }

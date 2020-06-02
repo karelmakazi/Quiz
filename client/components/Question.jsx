@@ -43,7 +43,7 @@ class Question extends React.Component {
     let resultIndicator = this.feedback
    
     return (
-      <div className='questionContainer'>
+      <div className='questionContainer' style={{borderTop: `1.5px solid ${color}`}}>
         <div className='questionNumber' style={{color: color}}>
           {number}
         </div>
@@ -51,10 +51,10 @@ class Question extends React.Component {
           {question}
         </div>
         <div className='questionAnswers'>
-          <div className='twoOptions' style={{borderLeft: `3px solid ${color}`}}>
-            <button style={{display:`${display}`}} value={'True'} 
+          <div className='twoOptions'>
+            <button style={{display:`${display}`, color: color}} value={'True'} 
               onClick={() => this.quizAnswerHandler(answer)}>TRUE</button>
-            <button style={{display:`${display}`}} value={'False'} 
+            <button style={{display:`${display}`, color: color}} value={'False'} 
               onClick={() => this.quizAnswerHandler(answer)}>FALSE</button>
             <div className='resultIndicator' style={{display:`${feedbackDisplay}`, color:this.feedbackColour}}>
               {resultIndicator}

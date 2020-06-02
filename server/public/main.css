@@ -119,15 +119,26 @@ label {
   z-index: 10;
   top: 0;
   left: 1.5%;
+  width: 45%;
+  height: 100%;
+  padding-left: 1%;
+  padding-right: 1%;
+  overflow: hidden;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 45%;
-  height: 100%;
   background-color:white;
 }
-
-
+.reportSection {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.twoOptions {
+  padding-top: 0.8vw;
+}  
 
 .slice1 {
   margin-top: 10%;
@@ -176,7 +187,10 @@ height: 75%;
 .questionContainer {
   display: flex;
   flex-direction: row;
- }
+  overflow: hidden;
+  height:5vw;
+  }
+
 .buttonContainer {
   margin: 0 auto;
   margin-top: -6%;
@@ -198,6 +212,35 @@ height: 75%;
   width: 100%;
   margin-bottom: 2%;
  }
+
+ /* .question {
+   height: 10%;
+ } */
+
+ .questionNumber {
+   font-family: 'rubber';
+   font-size: 1vw;
+   width: 7%;
+   padding-top: 2%;
+   text-align: left;
+   }
+
+  .questionBody{
+    width: 85%;
+    height: 80%;
+    padding-top: 1%;
+    padding-right: 2.5%;
+    padding-left: 1%;
+    text-align: left;
+    font-family: 'Abel', sans-serif;
+    font-size: 1.2vw;
+  }
+
+  .questionAnswers {
+    width: 20%;
+    height: 80%;
+    }
+
 .questionAnswers button {
   font-size: 1vw;
   text-align: left;
@@ -205,35 +248,8 @@ height: 75%;
   height: 30%;
   margin-bottom: 0;
 }
-.question {
-  height: 10%;
-}
-.questionNumber {
-  font-family: 'rubber';
-  font-size: 1vw;
-  width: 7%;
-  padding-top: 2%;
-  padding-left: 2%;
-  text-align: center;
-  }
-.questionBody{
-  width: 85%;
-  height: 3vw;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
-  padding-top: 1%;
-  text-align: left;
-  font-family: 'Abel', sans-serif;
-  font-size: 1.1vw;
-}
-.questionAnswers {
-  width: 20%;
-  height: 2vw;
-  padding-top: 1%;
-  }
-.twoOptions {
-  padding-top: 0.8vw;
-}  
+
+
 .footerNav {
   font-family: 'rubber';
   font-size: 2vw;
@@ -245,18 +261,12 @@ height: 75%;
   cursor: pointer;
 }
 .resultIndicator {
-  padding-top: 0.8vw;
   padding-left: 4%;
   height: 2vw;
   font-family: 'rubber';
   font-size: 1vw;
  }
-.reportSection {
-  height: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .reportBark {
   margin-top: 2.5%;
   margin-bottom: 5%;
@@ -283,4 +293,3 @@ height: 75%;
   flex-direction: column;
   align-items: center;
 }
-

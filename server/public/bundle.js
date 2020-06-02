@@ -365,7 +365,10 @@ var Question = /*#__PURE__*/function (_React$Component) {
       var feedbackDisplay = this.state.answered === 0 ? 'none' : '';
       var resultIndicator = this.feedback;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "questionContainer"
+        className: "questionContainer",
+        style: {
+          borderTop: "1.5px solid ".concat(color)
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "questionNumber",
         style: {
@@ -376,13 +379,11 @@ var Question = /*#__PURE__*/function (_React$Component) {
       }, question), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "questionAnswers"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "twoOptions",
-        style: {
-          borderLeft: "3px solid ".concat(color)
-        }
+        className: "twoOptions"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         style: {
-          display: "".concat(display)
+          display: "".concat(display),
+          color: color
         },
         value: 'True',
         onClick: function onClick() {
@@ -390,7 +391,8 @@ var Question = /*#__PURE__*/function (_React$Component) {
         }
       }, "TRUE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         style: {
-          display: "".concat(display)
+          display: "".concat(display),
+          color: color
         },
         value: 'False',
         onClick: function onClick() {
