@@ -71,7 +71,7 @@ class ScoreReport extends Component {
               YOUR SCORE:
               {currentScore}
             </div>
-            <div className='nameEntry' style={{borderTop: `3px solid ${catColor}`, borderBottom: `3px solid ${catColor}`}}>
+            <div className='nameEntry' style={{backgroundColor: catColor}}>
               <label htmlFor='userName'>ENTER YOUR NAME </label>
               <input id='userName' value={this.state.name} name='name' onChange={this.handleChange} />
               <div className='footerNav' style={{color: catColor}} onClick={this.handleSubmit}>

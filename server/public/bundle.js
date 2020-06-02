@@ -638,7 +638,10 @@ var Quiz = /*#__PURE__*/function (_React$Component) {
           parentHandler: _this3.questionResponseHandler
         }));
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "footerContainer"
+        className: "footerContainer",
+        style: {
+          backgroundColor: color
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         className: "footerNav"
@@ -812,8 +815,7 @@ var ScoreReport = /*#__PURE__*/function (_Component) {
       }, "YOUR SCORE:", currentScore), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nameEntry",
         style: {
-          borderTop: "3px solid ".concat(catColor),
-          borderBottom: "3px solid ".concat(catColor)
+          backgroundColor: catColor
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "userName"

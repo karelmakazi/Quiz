@@ -130,6 +130,35 @@ label {
   align-items: center;
   background-color:white;
 }
+.mapContainer {
+  height: 75%;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  }
+.questionContainer {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  height:5vw;
+  }
+
+.buttonContainer {
+  margin: 0 auto;
+  margin-top: -6%;
+  width: 80%;
+  height: 80%;
+}
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  height:5%;
+  width: 100%;
+  padding-top: 4.5%;
+  justify-content: center;
+  }
+
+
 .reportSection {
   height: 60%;
   display: flex;
@@ -181,30 +210,7 @@ label {
   box-shadow: .5vw 0vw 1vw rgba(0, 0, 0, 0.392);
 }
 
-.mapContainer {
-height: 75%;
-}
-.questionContainer {
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  height:5vw;
-  }
 
-.buttonContainer {
-  margin: 0 auto;
-  margin-top: -6%;
-  width: 80%;
-  height: 80%;
-}
-.footerContainer {
-  display: flex;
-  flex-direction: row;
-  height:5%;
-  width: 100%;
-  padding-top: 2vw;
-  justify-content: center;
-}
 
 /* COMPONENTS */
 .contentContainer button {
@@ -213,33 +219,29 @@ height: 75%;
   margin-bottom: 2%;
  }
 
- /* .question {
-   height: 10%;
- } */
-
- .questionNumber {
-   font-family: 'rubber';
-   font-size: 1vw;
-   width: 7%;
-   padding-top: 2%;
-   text-align: left;
-   }
-
-  .questionBody{
-    width: 85%;
-    height: 80%;
-    padding-top: 1%;
-    padding-right: 2.5%;
-    padding-left: 1%;
-    text-align: left;
-    font-family: 'Abel', sans-serif;
-    font-size: 1.2vw;
+.questionNumber {
+  font-family: 'rubber';
+  font-size: 1vw;
+  width: 7%;
+  padding-top: 2%;
+  text-align: left;
   }
 
-  .questionAnswers {
-    width: 20%;
-    height: 80%;
-    }
+.questionBody{
+  width: 85%;
+  height: 80%;
+  padding-top: 1%;
+  padding-right: 2.5%;
+  padding-left: 1%;
+  text-align: left;
+  font-family: 'Abel', sans-serif;
+  font-size: 1.2vw;
+}
+
+.questionAnswers {
+  width: 20%;
+  height: 80%;
+  }
 
 .questionAnswers button {
   font-size: 1vw;
@@ -249,14 +251,12 @@ height: 75%;
   margin-bottom: 0;
 }
 
-
 .footerNav {
   font-family: 'rubber';
   font-size: 2vw;
   letter-spacing: 0.01em;
   text-align: center;
-  margin-right: 2vw;
-  color: black;
+  color:white;
   text-decoration: none;
   cursor: pointer;
 }
@@ -286,10 +286,12 @@ height: 75%;
 }
 .nameEntry {
   margin-top: 8vw;
-  padding-top: 2%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   height: 25%;
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }

@@ -152,7 +152,7 @@ class Quiz extends React.Component {
               })
             }
           </div>
-          <div className='footerContainer'>
+          <div className='footerContainer' style={{backgroundColor: color}}>
             <Link to='/' className='footerNav'>HOME</Link>
             <Link to='/Score' className='footerNav' 
               onClick={() => this.handleResultsSubmit(dispatch)} >SCORE</Link>
