@@ -208,6 +208,42 @@ function Home(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mainContainer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "contentContainer shadow"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "QUIZZICAL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A competetive quiz game guaranteed to lose you more friends than Monopoly. Select your favourite category and get ready to scratch your head!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "buttonContainer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "CATEGORIES")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/Quiz"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "categoryFilms",
+    value: "Films",
+    onClick: function onClick() {
+      return eventHandler(dispatch);
+    }
+  }, " FILMS ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/Quiz"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "categoryAnimals",
+    value: "Animals",
+    onClick: function onClick() {
+      return eventHandler(dispatch);
+    }
+  }, " ANIMALS ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/Quiz"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "categoryScience",
+    value: "Science",
+    onClick: function onClick() {
+      return eventHandler(dispatch);
+    }
+  }, " SCIENCE ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/Quiz"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "categoryHistory",
+    value: "History",
+    onClick: function onClick() {
+      return eventHandler(dispatch);
+    }
+  }, " HISTORY "))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "slice1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sliceContent"
@@ -226,32 +262,29 @@ function Home(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "HISTORY")), "\u2018"));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])()(Home));
-{
-  /* <div className="contentContainer shadow">
-   <h1>QUIZZICAL</h1>
-   <p>
-     A competetive quiz game guaranteed to lose you more friends than Monopoly.
-   </p>
-   <div className="buttonContainer">
-     <div><h2>CATEGORIES</h2></div>
-     <div>
-       <Link to='/Quiz'><button className='categoryFilms' value='Films' 
-         onClick={() => eventHandler(dispatch)}> FILMS </button>
-       </Link>
-       <Link to='/Quiz'><button className='categoryAnimals' value='Animals' 
-         onClick={() => eventHandler(dispatch)}> ANIMALS </button>
-       </Link>
-       <Link to='/Quiz'><button className='categoryScience' value='Science' 
-         onClick={() => eventHandler(dispatch)}> SCIENCE </button>
-       </Link>
-       <Link to='/Quiz'><button className='categoryHistory' value='History' 
-         onClick={() => eventHandler(dispatch)}> HISTORY </button>
-       </Link>
-     </div>
-   </div>
-  </div> */
-}
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])()(Home)); //  <div className="contentContainer shadow">
+//   <h1>QUIZZICAL</h1>
+//   <p>
+//     A competetive quiz game guaranteed to lose you more friends than Monopoly.
+//   </p>
+//   <div className="buttonContainer">
+//     <div><h2>CATEGORIES</h2></div>
+//     <div>
+//       <Link to='/Quiz'><button className='categoryFilms' value='Films' 
+//         onClick={() => eventHandler(dispatch)}> FILMS </button>
+//       </Link>
+//       <Link to='/Quiz'><button className='categoryAnimals' value='Animals' 
+//         onClick={() => eventHandler(dispatch)}> ANIMALS </button>
+//       </Link>
+//       <Link to='/Quiz'><button className='categoryScience' value='Science' 
+//         onClick={() => eventHandler(dispatch)}> SCIENCE </button>
+//       </Link>
+//       <Link to='/Quiz'><button className='categoryHistory' value='History' 
+//         onClick={() => eventHandler(dispatch)}> HISTORY </button>
+//       </Link>
+//     </div>
+//   </div>
+// </div>
 
 /***/ }),
 

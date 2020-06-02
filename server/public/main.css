@@ -12,7 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: bisque;
+  background-color: rgb(232, 202, 166);
 }
 button {
   background: none;
@@ -34,6 +34,7 @@ input {
 /* TYPOGRAPHY */
 
 h1 {
+  margin-top: 0;
   font-family: 'rubber';
   font-size: 6.2vw;
   letter-spacing: 0.01em;
@@ -42,6 +43,7 @@ h1 {
   padding-top: 30px;
   margin-bottom: 0; 
 }
+
 h2 {
   font-family: 'rubber';
   font-size: 3.5vw;
@@ -49,15 +51,15 @@ h2 {
   text-align: center;
   }
 .contentContainer h2 {
-  margin-bottom: 2.5%;
-  text-decoration: underline black;
+  border-bottom: 1.5px solid #000
 }
 .sliceContent h2{
 margin: 0;
 font-size: 4vw;
 text-align: left;
-color: cornsilk;
+color: white;
 }
+
 h3 {
   font-family: 'rubber';
   font-size: 2vw;
@@ -68,9 +70,11 @@ h3 {
   margin-top: -1.5vw;
   font-size: 1.25vw;
   }
+
 p {
   font-family: 'Abel', sans-serif;
-  font-size: 1.9vw;
+  font-size: 2vw;
+  line-height: 1;
   text-align: center;
 }
 .contentContainer p {
@@ -79,47 +83,17 @@ p {
   padding-left: 12%;
   padding-right: 12%;
 }
+
 label {
   font-family: 'rubber';
   font-size: 2vw;
 }
+
 .categoryHead {
   text-transform: uppercase;
   margin-top: 0;
   font-size: 5vw;
 }
-
-/* LAYOUTS */
-.mainContainer {
-  width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-  /* background-image: url(./Images/1None.png);
-  background-repeat: no-repeat;
-  background-size: cover; */
-  /* padding-left: 5vw; */
-}
-.contentContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 45%;
-  height: 100vh;
-  background-color:whitesmoke;
-}
-
-
-
-
-  /* CSS BACKGROUND */
-/* #backgroundContainer {
-  height: 100vh;
-  height: 100vh;
-  background-color: cornsilk;
-  font-family: 'rubber';
-  font-size: 30px;
-} */
-
 .categoryFilms {
   color: #D66C2A;
 }
@@ -134,7 +108,29 @@ label {
 }
 
 
+/* LAYOUTS */
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+.contentContainer {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 1.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+  background-color:white;
+}
+
+
+
 .slice1 {
+  margin-top: 10%;
   height: 8vw;
   width: 100%;
   transform: skewY(-20deg);
@@ -163,7 +159,7 @@ label {
   max-width: 50em;
   height: 100%;
   padding-top: 2%;
-  margin-left: 40%;
+  margin-left: 50%;
   transform:skew(18deg);
   }
 
@@ -287,3 +283,4 @@ height: 75%;
   flex-direction: column;
   align-items: center;
 }
+
