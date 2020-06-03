@@ -10,15 +10,13 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "client": "webpack-dev-server --hot --inline",
-    "dev": "run-p dev:client dev:server",
-    "dev:client": "webpack --watch",
-    "dev:server": "nodemon server",
-    "start": "run-s build server",
-    "build": "webpack",
-    "server": "node server",
-    "test": "jest --watchAll"
-  },
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+    },
   "babel": {
     "presets": [
       "@babel/preset-env",
