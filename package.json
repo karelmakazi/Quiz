@@ -9,6 +9,7 @@
   "main": "server/index.js",
   "author": "EDA",
   "license": "ISC",
+  "homepage": "https://karelmakazi.github.io/Quiz/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
