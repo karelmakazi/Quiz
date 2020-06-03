@@ -10,12 +10,14 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "client": "webpack-dev-server --hot --inline",
+    "dev": "run-p dev:client dev:server",
+    "dev:client": "webpack --watch",
+    "dev:server": "nodemon server",
+    "start": "run-s build server",
+    "build": "webpack",
+    "server": "node server",
+    "test": "jest --watchAll"
   },
   "babel": {
     "presets": [
