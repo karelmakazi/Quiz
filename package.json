@@ -1,6 +1,9 @@
 {
   "name": "boilerplate-react-webpack",
   "version": "0.2.2",
+  "engines": {
+    "node": "12.16.x"
+  },
   "description": "A webpack React starter",
   "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
   "main": "server/index.js",
@@ -13,7 +16,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
-    },
+  },
   "babel": {
     "presets": [
       "@babel/preset-env",
